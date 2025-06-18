@@ -8,5 +8,10 @@ app.use(cors());
 app.use(express.json());
 app.use("/api", usuarioRoutes);
 
-// Exporta como handler para Vercel
+// Rota básica de status para a raiz "/"
+app.get("/", (req, res) => {
+  res.send("✅ API DEVWEBII rodando com sucesso na Vercel 🚀");
+});
+
+// Exporta como handler para a Vercel
 export default app;
